@@ -7,6 +7,6 @@ data class Sys(
     val message: Double,
     val id: Int,
     val country: String,
-    val sunrise: Int,
-    val sunset: Int,
+    val sunrise: Long,
+    val sunset: Long,
 ): Serializable
