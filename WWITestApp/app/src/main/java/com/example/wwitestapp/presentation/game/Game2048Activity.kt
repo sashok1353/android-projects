@@ -1,14 +1,14 @@
-package com.example.wwitestapp
+package com.example.wwitestapp.presentation.game
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.View
-import android.view.View.OnTouchListener
 import android.widget.ImageView
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.DialogTitle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
+import com.example.wwitestapp.R
 import com.example.wwitestapp.databinding.ActivityGame2048Binding
 import com.example.wwitestapp.game2048.gesture.OnSwipeTouchListener
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,7 +30,6 @@ class Game2048Activity : AppCompatActivity() {
         binding.viewState = viewModel.viewState
 
         val swipeListener = OnSwipeTouchListener(this)
-        val imgView: ImageView = findViewById(R.id.imgView)
 
         binding.boardBackground.setOnTouchListener(swipeListener)
 
@@ -38,11 +37,35 @@ class Game2048Activity : AppCompatActivity() {
         lifecycleScope.launch {
             swipeListener.gestureEvents
                 .onEach { gesture ->
-                    viewModel.notifyGestureOccurred(gesture)
+                    when(viewModel.notifyGestureOccurred(gesture)) {
+                        Result.HAS_WON -> {
+                            createDialog("Victory!", "You won! Congratulation!", "Play again")
+                        }
+                        Result.HAS_LOST -> {
+                            createDialog("Game Over!", "You lost!", "Try again")
+                        }
+                        Result.HAS_MOVE -> {}
+                    }
+
                 }
                 .collect()
-
         }
+
+    }
+
+    private fun createDialog(title: String, message: String, buttonTitle: String) {
+        val dialog = AlertDialog.Builder(this@Game2048Activity)
+        dialog.setTitle(title)
+        dialog.setMessage(message)
+        dialog.setNeutralButton(buttonTitle) { dialog,_ ->
+            viewModel.viewState.restartHandler.invoke()
+            dialog.dismiss()
+        }
+        dialog.setCancelable(false)
+        dialog.show()
+    }
+
+    override fun onBackPressed() {
 
     }
 }

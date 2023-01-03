@@ -1,9 +1,9 @@
-package com.example.wwitestapp
+package com.example.wwitestapp.presentation.game
 
 import androidx.lifecycle.ViewModel
-import com.example.wwitestapp.game2048.board.Direction
-import com.example.wwitestapp.game2048.game.newGame2048
-import com.example.wwitestapp.game2048.game.presentation.TileViewState
+import com.example.wwitestapp.R
+import com.example.wwitestapp.data.game2048.game.newGame2048
+import com.example.wwitestapp.domain.game2048.board.Direction
 import com.example.wwitestapp.game2048.gesture.Gesture
 
 enum class Result{
@@ -65,7 +65,7 @@ class Game2048ViewModel : ViewModel() {
         }
     }
 
-    fun notifyGestureOccurred(gesture: Gesture):Result {
+    fun notifyGestureOccurred(gesture: Gesture): Result {
         if(gameManager.hasWon()) {
             return Result.HAS_WON
         } else if(gameManager.canMove()) {

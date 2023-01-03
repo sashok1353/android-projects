@@ -1,7 +1,10 @@
-package com.example.wwitestapp
+package com.example.wwitestapp.presentation.splash
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.wwitestapp.domain.usecase.IsFeatureEnabledUseCase
+import com.example.wwitestapp.NoInternetException
+import com.example.wwitestapp.SplashActivityViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.channels.BufferOverflow
@@ -56,5 +59,6 @@ class SplashViewModel @Inject constructor(
     private fun onLoadingError() {
         viewState.isLoading.postValue(false)
     }
+
 
 }

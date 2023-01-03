@@ -1,4 +1,4 @@
-package com.example.wwitestapp.game2048.game
+package com.example.wwitestapp.data.game2048.game
 
 /*
  * This function moves all the non-null elements to the beginning of the list

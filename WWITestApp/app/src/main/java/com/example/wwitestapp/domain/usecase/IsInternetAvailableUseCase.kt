@@ -1,4 +1,4 @@
-package com.example.wwitestapp.domain.isinternetavailable
+package com.example.wwitestapp.domain.usecase
 
 import java.net.URL
 import javax.inject.Inject

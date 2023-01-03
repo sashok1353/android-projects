@@ -1,14 +1,16 @@
-package com.example.wwitestapp
+package com.example.wwitestapp.presentation.splash
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
+import com.example.wwitestapp.R
 import com.example.wwitestapp.databinding.ActivitySplashBinding
+import com.example.wwitestapp.presentation.game.Game2048Activity
+import com.example.wwitestapp.presentation.webview.WebViewActivity
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint

@@ -1,8 +1,7 @@
-package com.example.wwitestapp.domain.isfeatureenabled
+package com.example.wwitestapp.domain.usecase
 
 import android.content.Context
 import android.content.ContextWrapper
-import com.example.wwitestapp.domain.isinternetavailable.IsInternetAvailableUseCase
 import com.example.wwitestapp.NoInternetException
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
@@ -22,7 +21,7 @@ class IsFeatureEnabledUseCase @Inject constructor(
         val config = Firebase.remoteConfig
 
         val settings = FirebaseRemoteConfigSettings.Builder()
-            .setMinimumFetchIntervalInSeconds(5)
+            .setMinimumFetchIntervalInSeconds(15)
             .build()
 
         config.setConfigSettingsAsync(settings)

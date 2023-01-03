@@ -9,14 +9,14 @@
     <data>
         <variable
             name="viewState"
-            type="com.example.wwitestapp.GameViewState" />
+            type="com.example.wwitestapp.presentation.game.GameViewState" />
     </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Game2048Activity">
+        tools:context=".presentation.game.Game2048Activity">
 
         <include
             android:id="@+id/board_background"
@@ -29,17 +29,29 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2048"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:textColor="#716A60"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="50dp"/>
+
         <ImageView
             android:id="@+id/imgView"
             android:onClickListener="@{ _ -> viewState.restartHandler.invoke()}"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="50dp"
             android:src="@drawable/ic_restart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/black" />
+            android:layout_marginTop="56dp"
+            app:tint="#716A60" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -90,197 +102,183 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.75"
-                />
+                app:layout_constraintGuide_percent="0.75" />
 
             <include
-                android:layout_width="0dp"
-                android:layout_height="0dp"
                 android:id="@+id/tileV1H1"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV1H1}"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
-                />
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:viewState="@{viewState.boardViewState.tileV1H1}" />
+
+            <include
                 android:id="@+id/tileV1H2"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV1H2}"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
-                />
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:viewState="@{viewState.boardViewState.tileV1H2}" />
+
+            <include
                 android:id="@+id/tileV1H3"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV1H3}"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
-                />
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:viewState="@{viewState.boardViewState.tileV1H3}" />
+
+            <include
                 android:id="@+id/tileV1H4"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV1H4}"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:viewState="@{viewState.boardViewState.tileV1H4}" />
+
+            <include
                 android:id="@+id/tileV2H1"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV2H1}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+                app:viewState="@{viewState.boardViewState.tileV2H1}" />
+
+            <include
                 android:id="@+id/tileV2H2"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV2H2}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+                app:viewState="@{viewState.boardViewState.tileV2H2}" />
+
+            <include
                 android:id="@+id/tileV2H3"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV2H3}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+                app:viewState="@{viewState.boardViewState.tileV2H3}" />
+
+            <include
                 android:id="@+id/tileV2H4"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV2H4}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+                app:viewState="@{viewState.boardViewState.tileV2H4}" />
+
+            <include
                 android:id="@+id/tileV3H1"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV3H1}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+                app:viewState="@{viewState.boardViewState.tileV3H1}" />
+
+            <include
                 android:id="@+id/tileV3H2"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV3H2}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+                app:viewState="@{viewState.boardViewState.tileV3H2}" />
+
+            <include
                 android:id="@+id/tileV3H3"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV3H3}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+                app:viewState="@{viewState.boardViewState.tileV3H3}" />
+
+            <include
                 android:id="@+id/tileV3H4"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV3H4}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
-                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
-                app:layout_constraintEnd_toEndOf="parent"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+                app:viewState="@{viewState.boardViewState.tileV3H4}" />
+
+            <include
                 android:id="@+id/tileV4H1"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV4H1}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+                app:viewState="@{viewState.boardViewState.tileV4H1}" />
+
+            <include
                 android:id="@+id/tileV4H2"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV4H2}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+                app:viewState="@{viewState.boardViewState.tileV4H2}" />
+
+            <include
                 android:id="@+id/tileV4H3"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV4H3}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
-                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
-                />
-
-            <include
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+                app:viewState="@{viewState.boardViewState.tileV4H3}" />
+
+            <include
                 android:id="@+id/tileV4H4"
                 layout="@layout/tile"
-                app:viewState="@{viewState.boardViewState.tileV4H4}"
-                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
                 app:layout_constraintEnd_toEndOf="parent"
-                />
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+                app:viewState="@{viewState.boardViewState.tileV4H4}" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,4 +1,9 @@
-package com.example.wwitestapp.game2048.board
+package com.example.wwitestapp.data.game2048.board
+
+import com.example.wwitestapp.domain.game2048.board.Cell
+import com.example.wwitestapp.domain.game2048.board.Direction
+import com.example.wwitestapp.domain.game2048.board.GameBoard
+import com.example.wwitestapp.domain.game2048.board.SquareBoard
 
 fun createSquareBoard(width: Int): SquareBoard {
     val cells = (1..width).flatMap { i ->

@@ -1,9 +1,10 @@
-package com.example.wwitestapp.game2048.game
+package com.example.wwitestapp.data.game2048.game
 
-import com.example.wwitestapp.game2048.board.Cell
-import com.example.wwitestapp.game2048.board.Direction
-import com.example.wwitestapp.game2048.board.GameBoard
-import com.example.wwitestapp.game2048.board.createGameBoard
+import com.example.wwitestapp.domain.game2048.board.Cell
+import com.example.wwitestapp.domain.game2048.board.Direction
+import com.example.wwitestapp.domain.game2048.board.GameBoard
+import com.example.wwitestapp.data.game2048.board.createGameBoard
+import com.example.wwitestapp.domain.game2048.Game
 
 fun newGame2048(initializer: Game2048Initializer<Int> = RandomGame2048Initializer): Game =
     Game2048(initializer)

@@ -1,4 +1,4 @@
-package com.example.wwitestapp
+package com.example.wwitestapp.presentation.webview
 
 import android.os.Bundle
 import android.webkit.WebView
@@ -6,6 +6,7 @@ import android.webkit.WebViewClient
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.example.wwitestapp.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

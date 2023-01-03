@@ -1,4 +1,4 @@
-package com.example.wwitestapp.game2048.board
+package com.example.wwitestapp.domain.game2048.board
 
 data class Cell(val i: Int, val j: Int) {
     override fun toString()= "($i, $j)"

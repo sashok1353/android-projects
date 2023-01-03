@@ -1,7 +1,7 @@
-package com.example.wwitestapp.game2048.game
+package com.example.wwitestapp.data.game2048.game
 
-import com.example.wwitestapp.game2048.board.Cell
-import com.example.wwitestapp.game2048.board.GameBoard
+import com.example.wwitestapp.domain.game2048.board.Cell
+import com.example.wwitestapp.domain.game2048.board.GameBoard
 import kotlin.random.Random
 
 interface Game2048Initializer<T> {

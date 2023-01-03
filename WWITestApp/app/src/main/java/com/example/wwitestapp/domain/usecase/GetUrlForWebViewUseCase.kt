@@ -1,4 +1,4 @@
-package com.example.wwitestapp.domain.geturlforwebview
+package com.example.wwitestapp.domain.usecase
 
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

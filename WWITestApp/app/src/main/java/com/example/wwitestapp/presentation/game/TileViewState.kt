@@ -1,4 +1,4 @@
-package com.example.wwitestapp.game2048.game.presentation
+package com.example.wwitestapp.presentation.game
 
 import android.content.res.ColorStateList
 import android.view.View
@@ -30,12 +30,3 @@ class TileViewState {
     val isVisible = MutableLiveData(false)
 }
 
-fun main() {
-
-    val tile = TileViewState()
-
-
-    tile.number.value = 2048
-
-
-}

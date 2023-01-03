@@ -1,7 +1,6 @@
-package com.example.wwitestapp.game2048.game
+package com.example.wwitestapp.domain.game2048
 
-import com.example.wwitestapp.game2048.board.Cell
-import com.example.wwitestapp.game2048.board.Direction
+import com.example.wwitestapp.domain.game2048.board.Direction
 
 interface Game {
     fun initialize()
