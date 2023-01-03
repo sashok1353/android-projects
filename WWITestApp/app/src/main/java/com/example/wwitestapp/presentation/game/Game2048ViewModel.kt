@@ -6,6 +6,12 @@ import com.example.wwitestapp.game2048.game.newGame2048
 import com.example.wwitestapp.game2048.game.presentation.TileViewState
 import com.example.wwitestapp.game2048.gesture.Gesture
 
+enum class Result{
+    HAS_WON,
+    HAS_LOST,
+    HAS_MOVE
+}
+
 class Game2048ViewModel : ViewModel() {
     private var gameManager = newGame2048()
         .apply {
@@ -22,7 +28,6 @@ class Game2048ViewModel : ViewModel() {
 
     init {
         updateUiStateByBoardState()
-
     }
 
     private fun updateUiStateByBoardState() {
@@ -60,23 +65,28 @@ class Game2048ViewModel : ViewModel() {
         }
     }
 
-    fun notifyGestureOccurred(gesture: Gesture) {
-        val direction =  when (gesture) {
-            Gesture.SWIPE_RIGHT -> Direction.RIGHT
-            Gesture.SWIPE_LEFT ->  Direction.LEFT
-            Gesture.SWIPE_UP -> Direction.UP
-            Gesture.SWIPE_DOWN -> Direction.DOWN
+    fun notifyGestureOccurred(gesture: Gesture):Result {
+        if(gameManager.hasWon()) {
+            return Result.HAS_WON
+        } else if(gameManager.canMove()) {
+            val direction =  when (gesture) {
+                Gesture.SWIPE_RIGHT -> Direction.RIGHT
+                Gesture.SWIPE_LEFT ->  Direction.LEFT
+                Gesture.SWIPE_UP -> Direction.UP
+                Gesture.SWIPE_DOWN -> Direction.DOWN
+            }
+            gameManager.processMove(direction)
+            updateUiStateByBoardState()
+            return Result.HAS_MOVE
+        } else {
+            return Result.HAS_LOST
         }
-        gameManager.processMove(direction)
-        updateUiStateByBoardState()
     }
 
 }
 
 class GameViewState(val restartHandler: () -> Unit ) {
     val boardViewState = GameBoard()
-
-
 }
 
 class GameBoard {

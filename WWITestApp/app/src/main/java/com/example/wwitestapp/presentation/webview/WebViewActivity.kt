@@ -32,8 +32,8 @@ class WebViewActivity : AppCompatActivity() {
         }
     }
 
-//    override fun onBackPressed() {
-//        // Ничего не делает, чтобы запретить переходить назад
-//    }
+    override fun onBackPressed() {
+        // Ничего не делает, чтобы запретить переходить назад
+    }
 
 }

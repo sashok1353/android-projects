@@ -20,8 +20,12 @@ class SplashViewModel @Inject constructor(
     private val isFeatureEnabledUseCase: IsFeatureEnabledUseCase,
 ) : ViewModel() {
 
+    val viewState: SplashActivityViewState = SplashActivityViewState(
+        onRetryClickHandler = { checkIsFeatureEnabledAndNavigate() }
+    )
+
     private val _navigationEvents = MutableSharedFlow<NavigateTo>(
-        replay = 0,
+        replay = 1,
         extraBufferCapacity = 1,
         onBufferOverflow = BufferOverflow.DROP_OLDEST
     )
@@ -29,12 +33,28 @@ class SplashViewModel @Inject constructor(
     val navigationEvents: SharedFlow<NavigateTo> = _navigationEvents
 
     init {
+        checkIsFeatureEnabledAndNavigate()
+    }
+
+    private fun checkIsFeatureEnabledAndNavigate() {
+        viewState.isLoading.value = true
         viewModelScope.launch(Dispatchers.IO) {
-            val isGameDisabled = isFeatureEnabledUseCase()
-            _navigationEvents.emit(
-                if (isGameDisabled) NavigateTo.NavigateToWebView
-                else NavigateTo.NavigateToGame
-            )
+            try {
+                val isGameDisabled = isFeatureEnabledUseCase()
+                _navigationEvents.emit(
+                    if (isGameDisabled) NavigateTo.NavigateToWebView
+                    else NavigateTo.NavigateToGame
+                )
+            } catch (noInternetException: NoInternetException) {
+                onLoadingError()
+                return@launch
+            }
+
         }
     }
+
+    private fun onLoadingError() {
+        viewState.isLoading.postValue(false)
+    }
+
 }
