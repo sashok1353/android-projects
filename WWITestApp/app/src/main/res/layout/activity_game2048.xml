@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="viewState"
+            type="com.example.wwitestapp.GameViewState" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Game2048Activity">
+
+        <include
+            android:id="@+id/board_background"
+            layout="@layout/board_game_background"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgView"
+            android:onClickListener="@{ _ -> viewState.restartHandler.invoke()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_restart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vertical_guideline_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.25" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vertical_guideline_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/vertical_guideline_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horizontal_guideline_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.25" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horizontal_guideline_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/horizontal_guideline_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.75"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV1H1"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV1H1}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+                />
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV1H2"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV1H2}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+                />
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV1H3"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV1H3}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+                />
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV1H4"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV1H4}"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV2H1"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV2H1}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV2H2"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV2H2}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV2H3"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV2H3}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV2H4"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV2H4}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV3H1"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV3H1}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV3H2"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV3H2}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV3H3"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV3H3}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV3H4"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV3H4}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+                app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV4H1"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV4H1}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV4H2"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV4H2}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV4H3"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV4H3}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+                app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+                />
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/tileV4H4"
+                layout="@layout/tile"
+                app:viewState="@{viewState.boardViewState.tileV4H4}"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

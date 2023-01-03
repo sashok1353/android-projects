@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideline_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horizontal_guideline_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <View
+        android:id="@+id/background_1_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <View
+        android:id="@+id/background_2_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <View
+        android:id="@+id/background_3_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <View
+        android:id="@+id/background_4_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <View
+        android:id="@+id/background_5_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+        />
+
+    <View
+        android:id="@+id/background_6_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+        />
+
+    <View
+        android:id="@+id/background_7_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+        />
+
+    <View
+        android:id="@+id/background_8_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_1"
+        />
+
+    <View
+        android:id="@+id/background_9_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+        />
+
+    <View
+        android:id="@+id/background_10_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+        />
+
+    <View
+        android:id="@+id/background_11_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+        />
+
+    <View
+        android:id="@+id/background_12_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_guideline_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_2"
+        />
+
+    <View
+        android:id="@+id/background_13_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+        />
+
+    <View
+        android:id="@+id/background_14_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_2"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_1"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+        />
+
+    <View
+        android:id="@+id/background_15_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical_guideline_3"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_2"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+        />
+
+    <View
+        android:id="@+id/background_16_tile"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/tile_background"
+        android:backgroundTint="@color/board_background_tile"
+        android:layout_margin="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline_3"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_guideline_3"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

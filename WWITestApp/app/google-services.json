@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "994004265283",
+    "project_id": "wwi-test-app",
+    "storage_bucket": "wwi-test-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994004265283:android:f7ec713aaa6e67f4b427f6",
+        "android_client_info": {
+          "package_name": "com.example.wwitestapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994004265283-itifl7euv40v6r8p43tj0c5cq20kg3e5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.wwitestapp",
+            "certificate_hash": "b5174f5f7a0f10330ceadcc9b7b873e9511053cd"
+          }
+        },
+        {
+          "client_id": "994004265283-cssomj7t1b1afbcq525mjc3fhumbvcfg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPKta_-bxL98eng0sDruDLx3BrUr_mDf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994004265283-cssomj7t1b1afbcq525mjc3fhumbvcfg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
