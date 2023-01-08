@@ -1,4 +1,4 @@
-package com.example.projemanag
+package com.example.projemanag.activities
 
 import android.content.Intent
 import android.graphics.Typeface
@@ -9,9 +9,10 @@ import android.os.Looper
 import android.view.WindowManager
 import com.example.projemanag.databinding.ActivitySplashBinding
 
+
 class SplashActivity : AppCompatActivity() {
 
-    var binding: ActivitySplashBinding? = null
+    private var binding: ActivitySplashBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
